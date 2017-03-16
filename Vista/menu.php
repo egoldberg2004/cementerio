@@ -15,40 +15,26 @@
 <body>
 
 <?php
-SQL="select * from productos order by producto"
-set rcc=server.createobject("adodb.recordset")
-rcc.open sql,conexion,3
+  $SQL="select * from productos order by producto";
+  $result = mysql_query($SQL);
 ?>
 <div id='cssmenu'>
 <ul>
    <li class='active'><a target="mainFrame" href='inc/portada.asp'><span>Productos</span></a></li>
    <?php
-     if rcc.recordcount>0 then
-	      while not rcc.eof
-	      numprod=rcc("idproducto")
-	 ?>
-      <li class='has-sub'><a href='#'><span><%=rcc("producto")%></span></a>
-         <ul>
-			 <?php
-			 sql="select * from ubicaciones where idp="&numprod &" order by ubicacion"
-			 set rx=server.createobject("adodb.recordset")
-			 rx.open sql,conexion,3
-			 while not rx.eof
-			 ?>
-				<li><a target="mainFrame" href="./inc/tarjeta.asp?idp=<%=rx("idubicacion")%>"><span><%=rx("ubicacion")%></span></a></li>
-			 <?php
-			 rx.movenext
-			 wend
-			 rx.close
-			 ?>
+     while ($registro = mysql_fetch_array($result)){
+     $numprod=$registro['idproduto'];
+	    echo "<li class='has-sub'><a href='#'><span>". $registro['producto'] ."</span></a><ul>";
+
+			 $sql2="select * from ubicaciones where idp=".$result['numprod']." order by ubicacion";
+			 $result2 = mysql_query($SQL2);
+			 while ($registro2 = mysql_fetch_array($result2)){
+			 echo "<li><a target='mainFrame' href='./inc/tarjeta.asp?idp=" . $result2['idubicacion'] . "><span>" . $result2['ubicacion'] . "></span></a></li>";
+         }
+   }
+   ?>
         </ul>
      </li>
-   <?php
-   rcc.movenext
-   wend
-   rcc.close
-   END IF
-   ?>
 
 	<li class='has-sub'><a href='#'><span>Reportes</span></a>
       <ul>
