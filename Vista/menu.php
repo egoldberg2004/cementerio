@@ -26,7 +26,7 @@
      $numprod=$registro['idproduto'];
 	    echo "<li class='has-sub'><a href='#'><span>". $registro['producto'] ."</span></a><ul>";
 
-			 $sql2="select * from ubicaciones where idp=".$result['numprod']." order by ubicacion";
+			 $sql2="select * from ubicaciones where idp=".$numprod." order by ubicacion";
 			 $result2 = mysql_query($SQL2);
 			 while ($registro2 = mysql_fetch_array($result2)){
 			 echo "<li><a target='mainFrame' href='./inc/tarjeta.asp?idp=" . $result2['idubicacion'] . "><span>" . $result2['ubicacion'] . "></span></a></li>";
