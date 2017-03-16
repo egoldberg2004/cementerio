@@ -1,5 +1,7 @@
 <?php
-  include('controlador/abre_bd.php');
+  //include('controlador/abre_bd.php');
+  $conexion = mysql_connect('localhost', 'root', '');
+  mysql_select_db("cementerio",$conexion) or die ("Error: no es posible conectar a la BD");
 ?>
 
 <html lang=''>
@@ -23,11 +25,11 @@
    <li class='active'><a target="mainFrame" href='inc/portada.asp'><span>Productos</span></a></li>
    <?php
      while ($registro = mysql_fetch_array($result)){
-     $numprod=$registro['idproduto'];
+     $numprod=$registro['idproducto'];
 	    echo "<li class='has-sub'><a href='#'><span>". $registro['producto'] ."</span></a><ul>";
 
 			 $sql2="select * from ubicaciones where idp=".$numprod." order by ubicacion";
-			 $result2 = mysql_query($SQL2);
+			 $result2 = mysql_query($sql2);
 			 while ($registro2 = mysql_fetch_array($result2)){
 			 echo "<li><a target='mainFrame' href='./inc/tarjeta.asp?idp=" . $result2['idubicacion'] . "><span>" . $result2['ubicacion'] . "></span></a></li>";
          }

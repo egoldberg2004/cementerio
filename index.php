@@ -1,5 +1,5 @@
 <?php
-  include('controlador/abre_bd.php');
+  //include('controlador/abre_bd.php');
 ?>
 
 	<html>
@@ -18,5 +18,5 @@
 	</html>
 
   <?php
-    include('controlador/cierra_bd.php');
+    //include('controlador/cierra_bd.php');
   ?>

@@ -1,8 +1,8 @@
 <?php
 $servidor = "localhost"; //el servidor que utilizaremos, en este caso será el localhost
 $usuario = "prueba"; //El usuario que acabamos de crear en la base de datos
-$contrasenha = "prueba123"; //La contraseña del usuario que utilizaremos
-$BD = "conectar"; //El nombre de la base de datos
+$contrasenha = ""; //La contraseña del usuario que utilizaremos
+$BD = "cementerio"; //El nombre de la base de datos
 
 /*Aquí abrimos la conexión en el servidor.
 Normalmente se envian 3 parametros (los datos del servidor, usuario y contraseña) a la función mysql_connect,
