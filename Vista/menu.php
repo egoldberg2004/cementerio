@@ -41,8 +41,8 @@
 	<li class='has-sub'><a href='#'><span>Reportes</span></a>
       <ul>
          <li><a target="mainFrame" href="./inc/ndisponible.asp"><span>Nichos Adultos Disponibles</span></a></li>
-		 <li><a target="mainFrame" href="./inc/nrdisponible.asp"><span>Nichos Reduccion Disponibles</span></a></li>
-		 <li><a target="mainFrame" href="./inc/busquedaf.asp"><span>Busqueda de fallecidos</span></a></li>
+		     <li><a target="mainFrame" href="./inc/nrdisponible.asp"><span>Nichos Reduccion Disponibles</span></a></li>
+		     <li><a target="mainFrame" href="./inc/busquedaf.asp"><span>Busqueda de fallecidos</span></a></li>
       </ul>
    </li>
 
