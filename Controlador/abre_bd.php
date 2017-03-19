@@ -1,4 +1,10 @@
 <?php
-  $conexion = mysql_connect('localhost', 'root', '');
-  mysql_select_db("cementerio",$conexion) or die ("Error: no es posible conectar a la BD");
+$conexion = mysqli_connect('localhost', 'root', '','cementerio');
+if(mysqli_connect_errno()){
+
+  echo "error con la conexion";
+  exit();
+}
+mysqli_set_charset($conexion,"utf8"); //juego de caracteres latinos
+
 ?>
